@@ -1,0 +1,745 @@
+/* ============================================================
+   XCL – XTREME CHAMPIONS LEAGUE  |  style.css
+   ============================================================ */
+
+
+/* ------------------------------------------------------------
+   DESIGN TOKENS
+   ------------------------------------------------------------ */
+:root {
+  --red:    #e8192c;
+  --dark:   #0a0a0a;
+  --darker: #050505;
+  --card:   #111111;
+  --border: #222222;
+  --muted:  #888888;
+}
+
+
+/* ------------------------------------------------------------
+   GLOBAL RESET & BASE
+   ------------------------------------------------------------ */
+* { box-sizing: border-box; }
+
+body {
+  background: var(--dark);
+  color: #fff;
+  font-family: 'Barlow', sans-serif;
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: 'Barlow Condensed', sans-serif;
+  text-transform: uppercase;
+}
+
+
+/* ------------------------------------------------------------
+   NAVBAR
+   ------------------------------------------------------------ */
+.top-nav {
+  background: #0d0d0d;
+  border-bottom: 1px solid var(--border);
+  padding: 10px 0;
+}
+
+.top-nav .nav-link {
+  color: #ccc;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 4px 10px;
+}
+.top-nav .nav-link:hover { color: #fff; }
+
+.cart-badge {
+  background: var(--red);
+  color: #fff;
+  font-size: 9px;
+  border-radius: 50%;
+  width: 14px;
+  height: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: -4px;
+  right: -4px;
+}
+
+
+/* ------------------------------------------------------------
+   HERO SECTION
+   ------------------------------------------------------------ */
+.hero-section {
+  background: #0d0d0d;
+  padding: 60px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at 70% 50%, rgba(232,25,44,0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.hero-section .container-fluid { position: relative; z-index: 2; }
+
+.hero-presents {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(36px, 6vw, 60px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.hero-presents .aaft-red { color: var(--red); }
+
+/* Large centred ✕ — single definition, no duplicate */
+.hero-x {
+  font-size: clamp(60px, 10vw, 120px);
+  color: var(--red);
+  font-weight: 900;
+  line-height: 1;
+}
+
+.xcl-logo-img {
+  max-width: 340px;
+  width: 100%;
+  height: auto;
+}
+
+.hero-desc {
+  font-size: 12px;
+  color: var(--muted);
+  line-height: 1.6;
+  max-width: 300px;
+  margin-top: 12px;
+}
+
+.season-bar {
+  background: #111;
+  border-top: 1px solid #1e1e1e;
+  border-bottom: 1px solid #1e1e1e;
+  padding: 8px 0;
+  text-align: center;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 13px;
+  letter-spacing: 4px;
+  color: #888;
+  position: relative;
+  z-index: 2;
+}
+.season-bar span { color: var(--red); }
+
+.hero-characters {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.hero-characters img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  max-height: 60vh;
+  object-fit: contain;
+  display: block;
+}
+
+
+/* ------------------------------------------------------------
+   SECTION DIVIDER
+   ------------------------------------------------------------ */
+.section-divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 0;
+}
+
+
+/* ------------------------------------------------------------
+   ABOUT SECTION — "WE ARE XCL"  [01 / 03]
+   ------------------------------------------------------------ */
+.about-section { padding: 50px 0; }
+
+.section-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--red);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.section-number {
+  color: #444;
+  margin-right: 6px;
+}
+
+.big-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(52px, 8vw, 80px);
+  line-height: 0.95;
+  text-transform: uppercase;
+}
+.big-title .red { color: var(--red); }
+
+.about-desc {
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.7;
+  margin-top: 16px;
+}
+
+.stats-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 20px;
+}
+
+.stat-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #1e1e1e;
+}
+.stat-item:last-child { border-bottom: none; }
+
+.stat-value {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  color: #fff;
+}
+
+.stat-value.highlight {
+  background: var(--red);
+  padding: 2px 10px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.stat-label {
+  font-size: 11px;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+
+/* ------------------------------------------------------------
+   FEATURED GUESTS
+   ------------------------------------------------------------ */
+.guests-section { padding: 50px 0; }
+
+.section-header-line {
+  border-left: 4px solid var(--red);
+  padding-left: 12px;
+  margin-bottom: 8px;
+}
+
+.section-title-guests {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(30px, 5vw, 48px);
+  text-transform: uppercase;
+}
+.section-title-guests .red { color: var(--red); }
+
+.guests-sub {
+  font-size: 12px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 32px;
+}
+
+.guest-card { text-align: center; padding: 0 10px; }
+
+.guest-name {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+.guest-name.gold     { color: #f5c842; }
+.guest-name.teal     { color: #00c8b4; }
+.guest-name.red-name { color: var(--red); }
+
+.guest-tag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+.guest-tag.red-tag { color: var(--red); }
+
+.guest-desc-line {
+  font-size: 12px;
+  color: #bbb;
+  line-height: 1.6;
+}
+
+.guests-more {
+  font-size: 12px;
+  color: #777;
+  text-align: center;
+  margin-top: 24px;
+  font-style: italic;
+}
+
+
+/* ------------------------------------------------------------
+   STALLS — AT THE VENUE  [02 / 03]
+   ------------------------------------------------------------ */
+.stalls-section { padding: 50px 0; }
+
+.stalls-desc {
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.7;
+  margin-bottom: 32px;
+}
+
+.stall-item { margin-bottom: 24px; }
+
+.stall-item-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+  padding-left: 10px;
+  border-left: 3px solid var(--red);
+}
+
+.stall-item-desc {
+  font-size: 12px;
+  color: #999;
+  line-height: 1.6;
+  padding-left: 13px;
+}
+
+
+/* ------------------------------------------------------------
+   PHOTOS — EVENT GALLERY  [03 / 03]
+
+   Layout: 8 images across 3 rows
+     Row 1 → 3 images (col-4)   height: 200px
+     Row 2 → 4 images (col-3)   height: 150px
+     Row 3 → 1 image  (col-12)  height: 200px
+
+   The row itself has a fixed height; col divs are set to
+   height:100% so the img can fill them with object-fit:cover.
+   ------------------------------------------------------------ */
+.photos-section { padding: 40px 0; }
+
+/* FIX: height is on the .row, not a placeholder.
+   col children and their imgs inherit height:100% to fill it. */
+.photo-row-1 {
+  height: 200px;
+}
+.photo-row-2 {
+  height: 150px;
+}
+.photo-row-3 {
+  /* allow the image to size naturally within its column/container */
+  height: auto;
+}
+
+/* reset row3 image rules; other rows retain fixed heights */
+.photo-row-1 > div,
+.photo-row-2 > div {
+  height: 120%;
+}
+
+/* Images fill their column completely */
+.photo-row-1 img,
+.photo-row-2 img,
+.photo-row-3 img {
+  width: 100%;
+  height: 120%;
+  object-fit: cover;
+  display: block;
+  border-radius: 4px;
+}
+
+
+/* ------------------------------------------------------------
+   CTA — REGISTER NOW
+   ------------------------------------------------------------ */
+.cta-section {
+  background: #0d0d0d;
+  margin-top: 30px;
+  padding: 50px 0 40px;
+  text-align: center;
+  border-top: 1px solid var(--border);
+}
+
+.cta-limited {
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: #888;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.cta-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  font-size: clamp(40px, 7vw, 72px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+.cta-title .red { color: var(--red); }
+
+.cta-sub {
+  font-size: 12px;
+  color: #888;
+  margin: 10px 0 24px;
+}
+
+.btn-register {
+  background: var(--red);
+  color: #fff;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  padding: 12px 40px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+}
+.btn-register:hover {
+  background: #c1121f;
+  color: #fff;
+}
+
+
+/* ------------------------------------------------------------
+   FOOTER
+   ------------------------------------------------------------ */
+.footer {
+  background: var(--darker);
+  border-top: 1px solid var(--border);
+  padding: 20px 0;
+}
+
+.footer-social a {
+  color: #777;
+  font-size: 16px;
+  margin: 0 6px;
+  transition: color .2s;
+}
+.footer-social a:hover { color: #fff; }
+
+.footer-copy {
+  font-size: 11px;
+  color: #555;
+  text-align: center;
+}
+.footer-copy a { color: #777; text-decoration: none; }
+
+
+/* ============================================================
+   MOBILE RESPONSIVE — tablets and below
+   ============================================================ */
+@media (max-width: 768px) {
+  
+  /* Navbar adjustments */
+  .top-nav {
+    padding: 8px 0;
+  }
+  
+  .top-nav img {
+    height: 40px !important;
+  }
+  
+  .top-nav .nav-link {
+    font-size: 12px;
+    padding: 4px 8px;
+  }
+  
+  /* Hero section — stack vertically */
+  .hero-section {
+    padding: 40px 0 0;
+  }
+  
+  .hero-presents {
+    font-size: clamp(28px, 5vw, 40px);
+  }
+  
+  .hero-x {
+    font-size: clamp(40px, 8vw, 80px);
+    margin: 20px 0;
+  }
+  
+  .hero-desc {
+    font-size: 11px;
+    max-width: 100%;
+  }
+  
+  .hero-characters img {
+    max-height: 40vh;
+  }
+  
+  .season-bar {
+    font-size: 11px;
+    letter-spacing: 2px;
+    padding: 6px 0;
+  }
+  
+  /* About section */
+  .about-section {
+    padding: 40px 0;
+  }
+  
+  .big-title {
+    font-size: clamp(36px, 6vw, 52px);
+  }
+  
+  .about-desc {
+    font-size: 12px;
+  }
+  
+  .stats-card {
+    padding: 12px 16px;
+  }
+  
+  .stat-value {
+    font-size: 20px;
+  }
+  
+  /* Guests section */
+  .guests-section {
+    padding: 40px 0;
+  }
+  
+  .section-title-guests {
+    font-size: clamp(24px, 4vw, 32px);
+  }
+  
+  .guests-sub {
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 24px;
+  }
+  
+  .guest-card {
+    padding: 0 8px;
+    margin-bottom: 24px;
+  }
+  
+  .guest-name {
+    font-size: 20px;
+  }
+  
+  .guest-tag {
+    font-size: 9px;
+    letter-spacing: 1px;
+  }
+  
+  .guest-desc-line {
+    font-size: 11px;
+  }
+  
+  /* Hide vertical dividers on mobile */
+  .guests-section .col-auto {
+    display: none !important;
+  }
+  
+  /* Stalls section */
+  .stalls-section {
+    padding: 40px 0;
+  }
+  
+  .big-title {
+    margin-bottom: 16px;
+  }
+  
+  .stalls-desc {
+    font-size: 12px;
+    margin-bottom: 24px;
+  }
+  
+  .stall-item {
+    margin-bottom: 20px;
+  }
+  
+  .stall-item-title {
+    font-size: 12px;
+  }
+  
+  .stall-item-desc {
+    font-size: 11px;
+  }
+  
+  /* Photos section — make gallery mobile-friendly */
+  .photos-section {
+    padding: 30px 0;
+  }
+  
+  .section-label {
+    font-size: 10px;
+  }
+  
+  .photo-row-1,
+  .photo-row-2 {
+    height: 120px;
+    margin-bottom: 8px !important;
+  }
+  
+  .photo-row-1 > div,
+  .photo-row-2 > div {
+    height: 100%;
+  }
+  
+  .photo-row-1 img,
+  .photo-row-2 img,
+  .photo-row-3 img {
+    height: 100%;
+  }
+  
+  /* CTA section */
+  .cta-section {
+    padding: 40px 0 30px;
+    margin-top: 20px;
+  }
+  
+  .cta-limited {
+    font-size: 10px;
+    margin-bottom: 6px;
+  }
+  
+  .cta-title {
+    font-size: clamp(32px, 6vw, 48px);
+  }
+  
+  .cta-sub {
+    font-size: 11px;
+    margin: 8px 0 20px;
+  }
+  
+  .btn-register {
+    font-size: 14px;
+    padding: 14px 32px;
+    letter-spacing: 2px;
+  }
+  
+  /* Footer adjustments */
+  .footer {
+    padding: 16px 0;
+  }
+  
+  .footer-social a {
+    font-size: 14px;
+    margin: 0 8px;
+  }
+  
+  .footer-copy {
+    font-size: 10px;
+  }
+}
+
+/* Extra small screens — phones */
+@media (max-width: 480px) {
+  
+  /* Container padding */
+  body {
+    overflow-x: hidden;
+  }
+  
+  .container-fluid {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+  
+  /* Navbar */
+  .top-nav img {
+    height: 36px !important;
+  }
+  
+  /* Hero section */
+  .hero-section {
+    padding: 30px 0 0;
+  }
+  
+  .hero-presents {
+    font-size: clamp(24px, 4vw, 32px);
+  }
+  
+  .hero-x {
+    font-size: clamp(32px, 6vw, 60px);
+    margin: 16px 0;
+  }
+  
+  .xcl-logo-img {
+    max-width: 160px;
+  }
+  
+  .hero-desc {
+    font-size: 10px;
+    line-height: 1.5;
+  }
+  
+  .hero-characters img {
+    max-height: 30vh;
+  }
+  
+  /* Section labels and titles */
+  .section-label {
+    font-size: 9px;
+  }
+  
+  .big-title {
+    font-size: clamp(28px, 5vw, 36px);
+    line-height: 0.9;
+  }
+  
+  .section-title-guests {
+    font-size: clamp(20px, 3vw, 28px);
+  }
+  
+  .about-desc,
+  .stalls-desc {
+    font-size: 11px;
+  }
+  
+  /* Guest cards */
+  .guest-name {
+    font-size: 18px;
+  }
+  
+  /* Photos */
+  .photo-row-1,
+  .photo-row-2 {
+    height: 100px;
+    gap: 6px !important;
+  }
+  
+  /* CTA */
+  .cta-title {
+    font-size: clamp(26px, 5vw, 36px);
+  }
+  
+  .btn-register {
+    font-size: 12px;
+    padding: 12px 28px;
+  }
+}
